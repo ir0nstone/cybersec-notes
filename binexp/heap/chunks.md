@@ -10,7 +10,7 @@ When space is allocated from the **heap** using a function such as `malloc()`, a
 
 The chunk has two sections - the **metadata** of the chunk (information _about_ the chunk) and the **user data**, where the data is actually stored.
 
-The `size` field is the overall size of the chunk, **including metadata**. It must be a multiple of `8`, meaning the last 3 bits of the `size` are `0`. This allows the flags `A`, `M` and `P` to take up that space, with `M` being the 3rd-last bit of `size`, `A` the 2nd-last and `P` the last.
+The `size` field is the overall size of the chunk, **including metadata**. It must be a multiple of `8`, meaning the last 3 bits of the `size` are `0`. This allows the flags `A`, `M` and `P` to take up that space, with `A` being the 3rd-last bit of `size`, `M` the 2nd-last and `P` the last.
 
 The flags have special uses:
 
