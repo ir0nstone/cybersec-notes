@@ -1,6 +1,6 @@
 # An Introduction to Blockchain
 
-One category that's been popping up a lot more in recents CTFs is _blockchain_. This typically takes the form of something called ethereal _Smart Contracts_ and their exploitation, generally on an ethereum testnet.
+One category that's been popping up a lot more in recents CTFs is _blockchain_. This typically takes the form of something called ethereum _Smart Contracts_ and their exploitation, generally on an ethereum testnet.
 
 This section is going to provide you with an overview of cryptocurrencies, blockchain and their various uses. We will also introduce the concept of a _Smart Contract_, which is the main component of blockchain CTF challenges.
 
