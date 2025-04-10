@@ -110,6 +110,11 @@
 
 * [An Introduction to Blockchain](blockchain/an-introduction-to-blockchain.md)
 
+***
+
+* [Smart Contracts and Solidity](smart-contracts-and-solidity.md)
+* [Hosting a Testnet and Deploying a Contract](hosting-a-testnet-and-deploying-a-contract.md)
+
 ## Writeups
 
 * [Hack The Box](writeups/hack-the-box/README.md)
