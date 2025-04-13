@@ -114,6 +114,7 @@
 
 * [Smart Contracts and Solidity](smart-contracts-and-solidity.md)
 * [Hosting a Testnet and Deploying a Contract](hosting-a-testnet-and-deploying-a-contract.md)
+* [Interacting with Python](interacting-with-python.md)
 
 ## Writeups
 
