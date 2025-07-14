@@ -109,12 +109,9 @@
 ## Blockchain
 
 * [An Introduction to Blockchain](blockchain/an-introduction-to-blockchain.md)
-
-***
-
-* [Smart Contracts and Solidity](smart-contracts-and-solidity.md)
-* [Hosting a Testnet and Deploying a Contract](hosting-a-testnet-and-deploying-a-contract.md)
-* [Interacting with Python](interacting-with-python.md)
+* [Smart Contracts and Solidity](blockchain/smart-contracts-and-solidity.md)
+* [Hosting a Testnet and Deploying a Contract](blockchain/hosting-a-testnet-and-deploying-a-contract.md)
+* [Interacting with Python](blockchain/interacting-with-python.md)
 
 ## Writeups
 
