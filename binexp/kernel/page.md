@@ -18,7 +18,7 @@ Each cache is assigned its own area of memory, with at least one page assigned t
 
 If the kernel wants to allocate space in the heap, it will call `kmalloc`  and pass it the size (and some flags). The size will be rounded up to fit in the smallest possible cache, then assigned there. Anything larger than 8192 bytes will not use `kmalloc` at all, and uses `page_alloc` instead.
 
-This approach is a **massive** performance improvement. It can also make exploitation primitives harder, as every slab is the same size and it's harder TODO
+This approach is a **massive** performance improvement. It can also make exploitation primitives harder, as every slab is the same size and it's just harder to overlap.
 
 ### New Page Creation
 
