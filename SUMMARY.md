@@ -94,6 +94,7 @@
   * [modprobe\_path](binexp/kernel/modprobe_path.md)
   * [KASLR](binexp/kernel/kaslr.md)
   * [KPTI](binexp/kernel/kpti.md)
+  * [Page](binexp/kernel/page.md)
 * [Browser Exploitation](binexp/browser-exploitation/README.md)
   * [\*CTF 2019 - oob-v8](binexp/browser-exploitation/ctf-2019-oob-v8/README.md)
     * [The Challenge](binexp/browser-exploitation/ctf-2019-oob-v8/the-challenge.md)
