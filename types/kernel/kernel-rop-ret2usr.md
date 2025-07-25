@@ -13,7 +13,7 @@ The most basic of examples is the **ret2usr** technique, which is analogous to *
 ## Vulnerable Module
 
 {% hint style="info" %}
-Note that the kernel version here is 6.1, due to some added protections we will come to later.
+Note that the kernel version here is 6.1, due to some modifications we will discuss later.
 {% endhint %}
 
 {% file src="../../.gitbook/assets/rop_ret2usr.zip" %}
@@ -213,7 +213,7 @@ How exactly does the above assembly code restore registers, and why does it retu
 * CS - Code Segment
   * Defines the memory location that instructions are stored in
   * Must point to our user space code
-* RFLAGS - [various things](https://wiki.osdev.org/CPU\_Registers\_x86#EFLAGS\_Register)
+* RFLAGS - [various things](https://wiki.osdev.org/CPU_Registers_x86#EFLAGS_Register)
 
 GS is changed back via the `swapgs` instruction. All others are changed back via [`iretq`](https://www.felixcloutier.com/x86/iret:iretd:iretq), the QWORD variant of the `iret` family of intel instructions. The intent behind `iretq` is to be **the** way to return from exceptions, and it is specifically designed for this purpose, as seen in Vol. 2A 3-541 of the [Intel Software Developer’s Manual](https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html):
 

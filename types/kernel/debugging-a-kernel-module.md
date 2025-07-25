@@ -118,6 +118,8 @@ rax            0x0                 0
 
 This means that `prepare_kernel_cred()` is returning `NULL`. Why is that? It didn't do that before!
 
+## Finding the Issue
+
 Let's compare the differences in `prepare_kernel_cred()` code between kernel [version 6.1](https://elixir.bootlin.com/linux/v6.1.96/source/kernel/cred.c#L712) and [version 6.10](https://elixir.bootlin.com/linux/v6.10-rc5/source/kernel/cred.c#L629):
 
 {% tabs %}
@@ -232,6 +234,8 @@ if (WARN_ON_ONCE(!daemon))
     return NULL;
 ```
 
-If `daemon` is NULL, return NULL - hence our issue!
+If `daemon` is NULL, return NULL - hence our issue! Instead, we have to pass a valid `cred` struct into RDI. The simplest way is to just pass `init_cred`, which is actually a static offset from the kernel base! This means that if we're in a position to get `commit_creds` and `prepare_kernel_cred`, we can also get `init_cred` without major issues.
 
-Unfortunately, there's no way to bypass this easily! We can fake `cred` structs, and if we can leak `init_task` we can use that memory address as well, but it's no longer as simple as calling `prepare_kernel_cred(0)`!
+### Passing in init\_cred
+
+`init_cred` is defined [here](https://elixir.bootlin.com/linux/v6.10-rc5/source/kernel/cred.c#L44). There is no symbol associated with it (unless the kernel was compiled with **debugging symbols**), so we can't read `/proc/kallsyms` and get the address like that.&#x20;

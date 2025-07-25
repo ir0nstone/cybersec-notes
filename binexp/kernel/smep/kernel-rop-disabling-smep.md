@@ -6,7 +6,7 @@ description: An old technique
 
 ## Setup
 
-Using the same setuo as [ret2usr](../kernel-rop-ret2usr.md), we make one single modification in `run.sh`:
+Using the same setuo as [ret2usr](../../../types/kernel/kernel-rop-ret2usr.md), we make one single modification in `run.sh`:
 
 ```bash
 #!/bin/sh
@@ -148,7 +148,7 @@ If we look at the resulting kernel panic, we meet an old friend:
 [    1.547037] #PF: supervisor instruction fetch in kernel mode
 ```
 
-SMEP is enabled again. How? If we [debug the exploit](../debugging-a-kernel-module.md), we definitely hit both the gadget and the call to `native_write_cr4()`. What gives?
+SMEP is enabled again. How? If we [debug the exploit](../../../types/kernel/debugging-a-kernel-module.md), we definitely hit both the gadget and the call to `native_write_cr4()`. What gives?
 
 Well, if we look at [the source](https://elixir.bootlin.com/linux/v6.1.96/source/arch/x86/kernel/cpu/common.c#L444), there's another feature:
 
