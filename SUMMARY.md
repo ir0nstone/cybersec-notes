@@ -96,11 +96,12 @@
   * [KPTI](binexp/kernel/kpti.md)
   * [Kernel Heap](binexp/kernel/page.md)
   * [Heap Structures](binexp/kernel/heap-structures.md)
-* [Browser Exploitation](binexp/browser-exploitation/README.md)
+* [Browser Exploitation](types/browser-exploitation/README.md)
   * [\*CTF 2019 - oob-v8](binexp/browser-exploitation/ctf-2019-oob-v8/README.md)
     * [The Challenge](binexp/browser-exploitation/ctf-2019-oob-v8/the-challenge.md)
   * [picoCTF 2021 - Kit Engine](binexp/browser-exploitation/picoctf-2021-kit-engine.md)
   * [picoCTF 2021 - Download Horsepower](binexp/browser-exploitation/picoctf-2021-download-horsepower.md)
+  * [An Introduction to Turbofan](binexp/browser-exploitation/an-introduction-to-turbofan.md)
 
 ## Reverse Engineering <a href="#rev" id="rev"></a>
 
