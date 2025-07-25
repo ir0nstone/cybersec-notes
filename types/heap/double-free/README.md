@@ -20,7 +20,7 @@ free(a);
 free(a);
 ```
 
-![](../../../.gitbook/assets/image%20%2817%29.png)
+![](<../../../.gitbook/assets/image (17).png>)
 
 Fairly logical.
 
@@ -30,11 +30,11 @@ But what happens if we called `malloc()` again for the same size?
 char *b = malloc(0x20);
 ```
 
-Well, strange things would happen. `a` is both allocated \(in the form of `b`\) _and free at the same time_.
+Well, strange things would happen. `a` is both allocated (in the form of `b`) _and free at the same time_.
 
 If you remember, the heap attempts to save as much space as possible and when the chunk is free the `fd` pointer is written **where the user data used to be**.
 
-![](../../../.gitbook/assets/image%20%2811%29.png)
+![](<../../../.gitbook/assets/image (11).png>)
 
 But what does this mean?
 
@@ -56,4 +56,3 @@ char *controlled = malloc(0x20); /* This is in the location we want */
 ```
 
 Boom - an arbitrary write.
-

@@ -8,4 +8,4 @@ Starting in [glibc 2.27](https://elixir.bootlin.com/glibc/glibc-2.27/source/mall
 
 The tcache bin acts like a fastbin - it is a singly-linked list of free chunks of a specific size. The handling of the list, using `fd` pointers, is identical. As you can expect, the attacks on the tcache are also similar to the attacks on fastbins.
 
-Ironically, years of defenses that were implemented into the fastbins - such as the [double-free protections](../double-free/double-free-protections.md) - were ignored in the initial implementation of the tcache. This means that using the heap to attack a binary running under glibc 2.27 binary is easier than one running under 2.25!
+Ironically, years of defenses that were implemented into the fastbins - such as the [double-free protections](../../../types/heap/double-free/double-free-protections.md) - were ignored in the initial implementation of the tcache. This means that using the heap to attack a binary running under glibc 2.27 binary is easier than one running under 2.25!

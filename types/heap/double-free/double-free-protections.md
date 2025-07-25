@@ -20,7 +20,7 @@ int main() {
 
 Notice that it throws an error.
 
-### Double Free or Corruption \(Fasttop\)
+### Double Free or Corruption (Fasttop)
 
 > Is the chunk at the top of the bin the same as the chunk being inserted?
 
@@ -42,11 +42,10 @@ int main() {
 }
 ```
 
-### malloc\(\): memory corruption \(fast\)
+### malloc(): memory corruption (fast)
 
 > When removing the chunk from a fastbin, make sure the size falls into the fastbin's range
 
 The previous protection could be bypassed by freeing another chunk in between the double-free and just doing a bit more work that way, but then you fall into this trap.
 
 Namely, if you overwrite `fd` with something like `0x08041234`, you have to make sure the metadata fits - i.e. the size ahead of the data is completely correct - and that makes it harder, because you can't just write into the GOT, unless you get lucky.
-
