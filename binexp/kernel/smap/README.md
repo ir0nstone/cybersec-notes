@@ -10,10 +10,20 @@ For example, functions such as `strcpy` or `memcpy` do not work for copying data
 
 This means that whether you interact using `write`/`read` or `ioctl`, the structs that you pass via pointers all get copied to kernel space using these functions before they are messed around with. This also means  that double-fetches are even more unlikely to occur as all operations are based on the snapshot of the data that the module took when `copy_from_user` was called (unless `copy_from_user` is called on the same struct multiple times).
 
-Like SMEP, SMAP is controlled by the CR4 register, in this case the 21st bit. It is also [pinned](smep/kernel-rop-disabling-smep.md#failure), so overwriting CR4 does nothing, and instead we have to work around it. There is no specific "bypass", it will depend on the challenge and will simply have to be accounted for.
+Like SMEP, SMAP is controlled by the CR4 register, in this case the 21st bit. It is also [pinned](../smep/kernel-rop-disabling-smep.md#failure), so overwriting CR4 does nothing, and instead we have to work around it. There is no specific "bypass", it will depend on the challenge and will simply have to be accounted for.
 
 Enabling SMAP is just as easy as SMEP:
 
 ```
     -cpu qemu64,+smep,+smap
 ```
+
+Sometimes it needs to be _disabled_ instead, in which case the option is `nosmap`.
+
+### Stac and Clac Instructions
+
+TODO
+
+### Putting Exploit Data Into Kernel Memory instead of Userspace
+
+TODO

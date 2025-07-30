@@ -173,4 +173,4 @@ set_register:
 }
 ```
 
-Essentially, it will check if the `val` that we input disables any of the bits defined in `cr4_pinned_bits`. This value is [set on boot](https://elixir.bootlin.com/linux/v6.1.96/source/arch/x86/kernel/cpu/common.c#L507), and effectively stops "sensitive CR bits" from being modified. If they are, they are **unset**. Effectively, modifying CR4 doesn't work any longer - and hasn't since [version 5.3-rc1](https://elixir.bootlin.com/linux/v5.3-rc1/source/arch/x86/kernel/cpu/common.c#L431).
+Essentially, it will check if the `val` that we input disables any of the bits defined in `cr4_pinned_bits`. This value is [set on boot](https://elixir.bootlin.com/linux/v6.1.96/source/arch/x86/kernel/cpu/common.c#L507), and stops "sensitive CR bits" from being modified. If they are, they are **unset**. Effectively, modifying CR4 doesn't work any longer - and hasn't since [version 5.3-rc1](https://elixir.bootlin.com/linux/v5.3-rc1/source/arch/x86/kernel/cpu/common.c#L431).
