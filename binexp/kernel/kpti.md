@@ -27,6 +27,6 @@ TODO example
 
 Trying to return to user mode via `iretq` without switching page tables results in a SIGSEGV rather than a kernel crash, because we are in userspace.
 
-An alternative method is therefore to use a SIGSEGV handler - the exploit gets root privileges, then tries to access userland and triggers a SIGSEGV. The kernel fault handler withh switch the page tables for us when dispatching to the handler!
+An alternative method is therefore to use a SIGSEGV handler - the exploit gets root privileges, then tries to access userland and triggers a SIGSEGV. The kernel fault handler with switch the page tables for us when dispatching to the handler! A good example can be found [here](https://trungnguyen1909.github.io/blog/post/matesctf/KSMASH/).
 
 TODO example
