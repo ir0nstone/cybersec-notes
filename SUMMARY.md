@@ -116,6 +116,7 @@
 
 ## Cryptography
 
+* [Introduction](cryptography/introduction.md)
 * [Number Theory Fundamentals](cryptography/number-theory-fundamentals/README.md)
   * [Divisibility, Factors and Euclid's Algorithms](cryptography/number-theory-fundamentals/divisibility-factors-and-euclids-algorithms.md)
   * [Modular Arithmetic](cryptography/number-theory-fundamentals/modular-arithmetic.md)
