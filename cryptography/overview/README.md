@@ -1,4 +1,4 @@
-# Overview
+# RSA
 
 ## Encryption
 
@@ -14,7 +14,7 @@ Where $$c$$ is now the ciphertext and is sent to **Alice**.
 
 ## Decryption
 
-Alice calculates $$\phi (N) = (p-1)(q-1)$$ and then calculates the [**modular multiplicative inverse**](../fundamentals/modular-arithmetic.md#modular-multiplicative-inverses) $$d$$ of $$e \mod \phi (N)$$. $$d$$ is the **private key** used for the decryption which is known only to **Alice**.
+Alice calculates $$\phi (N) = (p-1)(q-1)$$ and then calculates the [**modular multiplicative inverse**](../number-theory-fundamentals/modular-arithmetic.md#modular-multiplicative-inverses) $$d$$ of $$e \mod \phi (N)$$. $$d$$ is the **private key** used for the decryption which is known only to **Alice**.
 
 To decrypt, the Alice calculates $$M$$ again:
 
@@ -22,7 +22,7 @@ $$
 M = c^d \mod N
 $$
 
-The proof for this is based on [Euler's Formula](../fundamentals/rings-fields-and-eulers-totient-function.md#eulers-formula). Because we calculated $$d$$ such that $$de \equiv 1 \mod \phi (N)$$, then we know that there is an integer $$k$$ such that $$de = k\phi (N) + 1$$. Also note that $$c^d \equiv (M^e)^d \equiv M^{de}$$:
+The proof for this is based on [Euler's Formula](../number-theory-fundamentals/rings-fields-and-eulers-totient-function.md#eulers-formula). Because we calculated $$d$$ such that $$de \equiv 1 \mod \phi (N)$$, then we know that there is an integer $$k$$ such that $$de = k\phi (N) + 1$$. Also note that $$c^d \equiv (M^e)^d \equiv M^{de}$$:
 
 $$
 M^{de} \equiv M ^ {k\phi (N) + 1} \equiv M^{k\phi (N)} \times M \equiv (M^{\phi (N)})^k \times M \equiv 1^k \times M \equiv M \mod N

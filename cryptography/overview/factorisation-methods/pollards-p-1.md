@@ -10,7 +10,7 @@ $$
 a^{k(p-1)} \equiv 1 \mod p
 $$
 
-Due to [Fermat's Little Theorem](../../fundamentals/rings-fields-and-eulers-totient-function.md#fermats-little-theorem). This would mean $$a^{k(p-1)} - 1$$ is a factor of $$p$$ and therefore $$N$$.
+Due to [Fermat's Little Theorem](../../number-theory-fundamentals/rings-fields-and-eulers-totient-function.md#fermats-little-theorem). This would mean $$a^{k(p-1)} - 1$$ is a factor of $$p$$ and therefore $$N$$.
 
 ## Overview
 
@@ -38,7 +38,7 @@ We get to $$2^{5!} \mod 713$$, and find that $$gcd(310, 713)=31$$​. We have su
 
 ## Applications
 
-This algorithm is useful when we know $$p$$ is **smooth**, meaning it has **lots of small prime factors**. If this is the case, the iterative approach is more likely to include $$p-1$$ sooner rather than later. This leads to the concept of **safe primes**, primes in the form $$p=2q+1$$ where $$q$$ is also a prime (called a [Sophie Germain prime](https://en.wikipedia.org/wiki/Safe\_and\_Sophie\_Germain\_primes)). In this case, $$p-1$$ is not smooth.
+This algorithm is useful when we know $$p$$ is **smooth**, meaning it has **lots of small prime factors**. If this is the case, the iterative approach is more likely to include $$p-1$$ sooner rather than later. This leads to the concept of **safe primes**, primes in the form $$p=2q+1$$ where $$q$$ is also a prime (called a [Sophie Germain prime](https://en.wikipedia.org/wiki/Safe_and_Sophie_Germain_primes)). In this case, $$p-1$$ is not smooth.
 
 ## Sage Code
 
