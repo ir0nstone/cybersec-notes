@@ -187,5 +187,3 @@ Rust does not have null pointers - cases must be handled explicitly. This preven
 [RAII](https://doc.rust-lang.org/rust-by-example/scope/raii.html) ensures that whenever an object goes out of scope, its destructor is called and its owned resources are freed. This means **you never have to manually free memory** and protects you against resource leaks (like memory leaks).
 
 Modern C++ actually supports RAII, which is part of a drive to improve C++ memory safety. Rust **requires** it, however!
-
-&#x20;
