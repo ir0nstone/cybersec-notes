@@ -41,7 +41,7 @@ error[E0382]: borrow of moved value: `original`
 In the second line, as soon as we define `other`, it becomes **invalid** to use `original` again. This protects against **double-frees**, **use-after-frees** and any other sorts of vulnerabilities that can arise due to dangling pointers.
 
 {% hint style="info" %}
-Note that the error talks about how the type  `String` does not implement [the `Copy` trait](https://doc.rust-lang.org/std/marker/trait.Copy.html). If a type does implement this, then an assignment like the second line here would **duplicate** the variable, copying all of the bits over. This wouldn't cause an issue, as there are two distinct variables owning their respective values. What Rust does not want is two variables refering to **the same data in memory**, which would occur for `String` types as they are just pointers to the actual string in memory.
+Note that the error talks about how the type `String` does not implement [the `Copy` trait](https://doc.rust-lang.org/std/marker/trait.Copy.html). If a type does implement this, then an assignment like the second line here would **duplicate** the variable, copying all of the bits over. This wouldn't cause an issue, as there are two distinct variables owning their respective values. What Rust does not want is two variables refering to **the same data in memory**, which would occur for `String` types as they are just pointers to the actual string in memory.
 {% endhint %}
 
 ### Borrowing
@@ -187,3 +187,38 @@ Rust does not have null pointers - cases must be handled explicitly. This preven
 [RAII](https://doc.rust-lang.org/rust-by-example/scope/raii.html) ensures that whenever an object goes out of scope, its destructor is called and its owned resources are freed. This means **you never have to manually free memory** and protects you against resource leaks (like memory leaks).
 
 Modern C++ actually supports RAII, which is part of a drive to improve C++ memory safety. Rust **requires** it, however!
+
+### Out of Bounds
+
+Rust performs out-of-bounds checking at compilation time, but if this is impossible (e.g. the index is provided by the user), it automatically includes runtime OOB checks. Take the following code for example:
+
+```rust
+use std::io;
+
+fn main() {
+    let arr = [10, 20, 30];
+
+    println!("Enter an index:");
+
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+
+    let index: usize = input.trim().parse().unwrap();
+    let value = arr[index];
+
+    println!("Value: {}", value);
+}
+```
+
+If we run the program and input `5`, which is OOB, the program panics:
+
+```
+thread 'main' (7216640) panicked at src/main.rs:13:17:
+index out of bounds: the len is 3 but the index is 5
+```
+
+## Python
+
+Python has large overheads in their runtimes to provide their memory safety. Objects and allocated on a managed heap and never freed manually - instead, the **garbage collector** keeps track of references and frees objects once they become unreachable. Python also does not allow the use of pointers, and performs bounds checking on access for lists.
+
+C# and Java are similar in operation.
