@@ -108,6 +108,7 @@
   * [picoCTF 2021 - Download Horsepower](binexp/browser-exploitation/picoctf-2021-download-horsepower.md)
   * [An Introduction to Turbofan](binexp/browser-exploitation/an-introduction-to-turbofan.md)
 * [Memory Safety](binexp/memory-safety.md)
+* [Dynamic Binary Instrumentation](binexp/dynamic-binary-instrumentation.md)
 
 ## Reverse Engineering <a href="#rev" id="rev"></a>
 
