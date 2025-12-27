@@ -12,6 +12,8 @@ Every value in Rust has an **owner**, meaning that at any given point in the cod
 
 This is a different approach to other programming languages. As we have seen so far, C has no such concept of memory safety. Higher-level _managed_ languages, such as Python, Java or C#, handle memory-safety in the **runtime**. This compromises speed, as well as the requirement of a runtime.
 
+[This article](https://www.infoworld.com/article/2336661/rust-memory-safety-explained.html) has a good explanation, as does [this Stack Overflow](https://stackoverflow.com/questions/36136201/how-does-rust-guarantee-memory-safety-and-prevent-segmentation-faults) post. [The official documentation for this topic](https://doc.rust-lang.org/book/ch04-00-understanding-ownership.html) is also fantastic.
+
 ### Ownership
 
 Consider the following code:
