@@ -31,8 +31,7 @@ Sends `data` to the process. Data can either be a `string` or a `bytes-like obje
 
 Sends `data` to the process, followed by a **newline character** `\n`. Some programs require the `\n` to take in the input (think about how you need to hit the enter key to send the data with `nc`) while others don't.
 
-`p.sendline(data)` is equivalent to `p.send(data + '\n')`\
-
+`p.sendline(data)` is equivalent to `p.send(data + '\n')`<br>
 
 {% hint style="danger" %}
 An incorrect number of these may cause your exploit to stall when there's nothing wrong with it. This should be the first thing you check. If you're uncertain, use `p.clean()` instead.

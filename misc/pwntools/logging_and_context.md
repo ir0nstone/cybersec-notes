@@ -42,8 +42,7 @@ context.bits = 64
 ```
 
 Now every time you generate shellcode or use the `p64()` and `u64()` functions it will be specifically designed to use the `context` variables, meaning it will _just work_. The power of pwntools.\
-\
-
+<br>
 
 If you think that's a lot of setup, make it even simpler.
 

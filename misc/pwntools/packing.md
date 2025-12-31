@@ -9,8 +9,7 @@ Packing with the in-built python `struct` module is often a pain with loads of u
 
 ## p64(addr)
 
-Packs `addr` depending on `context`, which by default is **little-endian**.\
-
+Packs `addr` depending on `context`, which by default is **little-endian**.<br>
 
 ```python
 p64(0x04030201) == b'\x01\x02\x03\x04'
