@@ -108,6 +108,7 @@
   * [picoCTF 2021 - Download Horsepower](binexp/browser-exploitation/picoctf-2021-download-horsepower.md)
   * [An Introduction to Turbofan](binexp/browser-exploitation/an-introduction-to-turbofan/README.md)
     * [A Typer Bug](binexp/browser-exploitation/an-introduction-to-turbofan/a-typer-bug.md)
+  * [Browser Architecture](binexp/browser-exploitation/browser-architecture.md)
 * [Memory Safety](binexp/memory-safety.md)
 * [Dynamic Binary Instrumentation](binexp/dynamic-binary-instrumentation.md)
 
