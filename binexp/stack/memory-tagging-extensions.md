@@ -4,6 +4,8 @@ description: Arm's MTE Hardware Protection
 
 # Memory Tagging Extensions
 
+##
+
 ## Overview
 
 Much like with [Pointer Authentication](pointer-authentication.md), Arm consistently comes out with hardware-enabled protections that provide greater security. MTE, as it is called, is a hardware-based defence against memory safety vulnerabilities.
@@ -50,3 +52,9 @@ Apple now uses a new security mitigation called [Memory Integrity Enforcement](m
 ## Enhanced MTE
 
 This is a set of modifications made to MTE [thanks to Apple](https://security.apple.com/blog/memory-integrity-enforcement/), through collaboration with Arm. I can find little information about it except [here](https://developer.arm.com/documentation/109697/0100/Feature-descriptions/The-Armv8-9-architecture-extension?lang=en) under the heading **FEAT\_MTE4, Enhanced Memory Tagging Extension**. It is very much linked to Apple's new [Memory Integrity Enforcement](memory-integrity-enforcement.md).
+
+## Resources
+
+* [Arm's Blog post on MTE](https://newsroom.arm.com/blog/memory-safety-arm-memory-tagging-extension)
+* [Introduction to Arm MTE by Thore Göbel](https://thore.io/posts/2025/09/introduction-to-arm-memory-tagging-extensions/)
+* [Apple's Security Research Team on MIE](https://security.apple.com/blog/memory-integrity-enforcement/)
