@@ -305,7 +305,7 @@ $ zip test.phar test.php
 
 The upload works! Let's try and access the file itself. In BurpSuite, we'll use Repeater to query for the file. Note that **the server appends the `.php` for us - that's half the reason we have to do it this way**! So don't include the extension in the `page` parameter.
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 It worked! Now let's do a crazier command, like `system("ls")`:
 

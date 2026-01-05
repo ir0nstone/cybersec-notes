@@ -94,7 +94,7 @@ hit breakpoint at: 0x400762
 
 If we want, we can check the contents.
 
-![Chunk with our input](<../../../.gitbook/assets/image (2) (1).png>)
+![Chunk with our input](<../../../.gitbook/assets/image (2) (1) (1).png>)
 
 ![The Chunk with the Function Address](<../../../.gitbook/assets/image (3).png>)
 
@@ -121,7 +121,7 @@ Let's break **on** and **after** the `strcpy`. That way we can check the locatio
 hit breakpoint at: 0x40075d
 ```
 
-![The chunk before the strcpy](<../../../.gitbook/assets/image (2).png>)
+![The chunk before the strcpy](<../../../.gitbook/assets/image (2) (1).png>)
 
 So, the chunk with the pointer is located at `0x2493060`. Let's continue until the next breakpoint.
 
@@ -130,7 +130,7 @@ So, the chunk with the pointer is located at `0x2493060`. Let's continue until t
 hit breakpoint at: 0x400762
 ```
 
-![Corrupted](<../../../.gitbook/assets/image (1).png>)
+![Corrupted](<../../../.gitbook/assets/image (1) (1).png>)
 
 radare2 is nice enough to tell us we corrupted the data. Let's analyse the chunk again.
 

@@ -30,7 +30,7 @@ When it comes to accounts, one very common thing to check is **cookies**. Cookie
 
 Well, we have a cookie called `PHPSESSID` and the value `eyJ1c2VybmFtZSI6InllcyJ9`. Cookies are often base64 encoded, so we'll use a tool called [CyberChef](https://gchq.github.io/CyberChef/) to decode it.
 
-![](<../../../../.gitbook/assets/image (1).png>)
+![](<../../../../.gitbook/assets/image (1) (1).png>)
 
 Once we decode the base64, we see that the contents are simply `{"username":"yes"}`.
 

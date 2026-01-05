@@ -12,7 +12,7 @@ Every single `fd` pointer is protected by [the `PROTECT_PTR` macro](https://elix
 
 Here, `pos` is the location of the current chunk and `ptr` the location of the chunk we are pointing to (which is NULL if the chunk is the last in the bin). Once again, we are using ASLR to protect! The `>>12` gets rid of the predictable last 12 bits of ASLR, keeping only the random upper 52 bits (or effectively 28, really, as the upper ones are pretty predictable):
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Image courtesy of <a href="https://research.checkpoint.com/2020/safe-linking-eliminating-a-20-year-old-malloc-exploit-primitive/">https://research.checkpoint.com/2020/safe-linking-eliminating-a-20-year-old-malloc-exploit-primitive/</a></p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption><p>Image courtesy of <a href="https://research.checkpoint.com/2020/safe-linking-eliminating-a-20-year-old-malloc-exploit-primitive/">https://research.checkpoint.com/2020/safe-linking-eliminating-a-20-year-old-malloc-exploit-primitive/</a></p></figcaption></figure>
 
 It's a very rudimentary protection - we use the current location and the location we point to in order to mangle it. From a programming standpoint, it has virtually no overhead or performance impact. We can see that `PROTECT_PTR` has been implemented in [`tcache_put()`](https://elixir.bootlin.com/glibc/glibc-2.32/source/malloc/malloc.c#L2941) and two locations in `_int_free()` (for fastbins) [here](https://elixir.bootlin.com/glibc/glibc-2.32/source/malloc/malloc.c#L4299) and [here](https://elixir.bootlin.com/glibc/glibc-2.32/source/malloc/malloc.c#L4310). You can find `REVEAL_PTR` used as well.
 

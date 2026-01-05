@@ -55,6 +55,8 @@
       * [pop rsp](binexp/stack/stack-pivoting/exploitation/pop-rsp.md)
       * [leave](binexp/stack/stack-pivoting/exploitation/leave.md)
   * [Pointer Authentication](binexp/stack/pointer-authentication.md)
+  * [Memory Tagging Extensions](binexp/stack/memory-tagging-extensions.md)
+  * [Memory Integrity Enforcement](binexp/stack/memory-integrity-enforcement.md)
 * [Heap](binexp/heap/README.md)
   * [Introduction to the Heap](binexp/heap/introduction-to-the-heap.md)
   * [Chunks](binexp/heap/chunks.md)
