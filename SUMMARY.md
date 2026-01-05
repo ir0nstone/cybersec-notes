@@ -54,6 +54,7 @@
     * [Exploitation](binexp/stack/stack-pivoting/exploitation/README.md)
       * [pop rsp](binexp/stack/stack-pivoting/exploitation/pop-rsp.md)
       * [leave](binexp/stack/stack-pivoting/exploitation/leave.md)
+  * [Pointer Authentication](binexp/stack/pointer-authentication.md)
 * [Heap](binexp/heap/README.md)
   * [Introduction to the Heap](binexp/heap/introduction-to-the-heap.md)
   * [Chunks](binexp/heap/chunks.md)
