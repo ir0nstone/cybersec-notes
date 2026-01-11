@@ -116,6 +116,8 @@
     * [A Typer Bug](binexp/browser-exploitation/an-introduction-to-turbofan/a-typer-bug.md)
 * [Memory Safety](binexp/memory-safety/README.md)
   * [C++ Smart Pointers](binexp/memory-safety/c++-smart-pointers.md)
+  * [Garbage Collection](binexp/memory-safety/garbage-collection.md)
+  * [Automatic Reference Counting](binexp/memory-safety/automatic-reference-counting.md)
 * [Dynamic Binary Instrumentation](binexp/dynamic-binary-instrumentation.md)
 
 ## Reverse Engineering <a href="#rev" id="rev"></a>
