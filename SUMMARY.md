@@ -28,6 +28,7 @@
     * [ASLR Bypass with Given Leak](binexp/stack/aslr/aslr-bypass-with-given-leak.md)
     * [PLT and GOT](binexp/stack/aslr/plt_and_got.md)
     * [ret2plt ASLR bypass](binexp/stack/aslr/ret2plt-aslr-bypass.md)
+  * [Virtual Addresses and Virtual Memory](binexp/stack/virtual-addresses-and-virtual-memory.md)
   * [GOT Overwrite](binexp/stack/got-overwrite/README.md)
     * [Exploiting a GOT overwrite](binexp/stack/got-overwrite/exploiting-a-got-overwrite.md)
   * [RELRO](binexp/stack/relro.md)
