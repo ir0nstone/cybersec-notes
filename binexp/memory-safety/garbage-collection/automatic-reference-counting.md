@@ -12,7 +12,7 @@ Officially, every time a class instance is assigned to a property, constant or v
 
 ## Drawback: Reference Cycles
 
-One of the downsides of ARC is the idea of **reference cycles**, where two class instances have strong references to one another. A minimal example is as follows:
+One of the downsides of ARC is the idea of **reference cycles** (also called **retain cycles**), where two class instances have strong references to one another. A minimal example is as follows:
 
 ```swift
 class A {
@@ -42,6 +42,14 @@ Reference counting can lead to memory-unsafe execution if a program is multi-thr
 Having a programming language that uses purely ARC is very rare - only Apple's languages, Objective-C and Swift, do this.
 
 Python [does count references](https://docs.python.org/3/glossary.html#term-reference-count), but it [also has a garbage collector](https://docs.python.org/3/glossary.html#term-garbage-collection) to detect and break reference cycles. Up until Python 3.13, the [Global Interpreter Lock](https://blog.jetbrains.com/pycharm/2025/07/faster-python-unlocking-the-python-global-interpreter-lock/) (GIL) meant that multi-threading in Python was actually all on one thread, which counteracted the multi-threading race condition. With the removal of the GIL, [some extra work](https://peps.python.org/pep-0703/) was needed to fix this problem.
+
+### Swift: Fixing Reference Cycles
+
+Swift has two keywords that help fix reference cycles when they are found. The first is `weak`, which does not increment the reference count and instead becomes `nil` whenever the instance being referred to is deallocated. `weak` references must therefore be nullable.
+
+The second keyword is `unowned`, which like `weak` creates no strong reference but also cannot be nullable. If the object being referred to is deallocated, the app will crash when the unowned reference is used.
+
+In summary, Swift leaves it up to the developer to identify and fix reference cycles.
 
 ### Swift's Multi-threading Fix
 
