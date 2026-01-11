@@ -120,6 +120,7 @@
   * [Garbage Collection](binexp/memory-safety/garbage-collection/README.md)
     * [Tracing Garbage Collection](binexp/memory-safety/garbage-collection/tracing-garbage-collection.md)
     * [Automatic Reference Counting](binexp/memory-safety/garbage-collection/automatic-reference-counting.md)
+  * [Sandboxing](binexp/memory-safety/sandboxing.md)
 * [Dynamic Binary Instrumentation](binexp/dynamic-binary-instrumentation.md)
 
 ## Reverse Engineering <a href="#rev" id="rev"></a>
