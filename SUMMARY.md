@@ -114,7 +114,8 @@
     * [Operation of the Renderer](binexp/browser-exploitation/browser-architecture/operation-of-the-renderer.md)
   * [An Introduction to Turbofan](binexp/browser-exploitation/an-introduction-to-turbofan/README.md)
     * [A Typer Bug](binexp/browser-exploitation/an-introduction-to-turbofan/a-typer-bug.md)
-* [Memory Safety](binexp/memory-safety.md)
+* [Memory Safety](binexp/memory-safety/README.md)
+  * [C++ Smart Pointers](binexp/memory-safety/c++-smart-pointers.md)
 * [Dynamic Binary Instrumentation](binexp/dynamic-binary-instrumentation.md)
 
 ## Reverse Engineering <a href="#rev" id="rev"></a>
