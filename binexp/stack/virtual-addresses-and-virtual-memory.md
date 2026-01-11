@@ -28,8 +28,8 @@ While physical RAM may not have a sufficient chunk of contiguous memory for a pr
 
 #### Strict Process Isolation
 
-Processes cannot interfere with the address space of another process, creating a stronger security boundary.
+Processes cannot interfere with the address space of another process, creating a stronger security sandbox.
 
 #### Allocate More Memory than we have RAM
 
-When the physical memory (RAM) is filled up, the OS will move inactive pages in memory to the [swap space](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace), which is located on the **hard drive**. The idea is that, in times of large strain, the hard drive will act as a sort of RAM overflow. Swapped memory is much, much slower than RAM, which is why inactive memory pages are the ones moved. This allows the Operating System to handle low memory gracefully and without crashing. Virtual addressing allows us to not think about this happening, as the address translation done by the OS via the MMU will automatically map the corresponding virtual addresses to hard drive addresses.
+When the physical memory (RAM) is filled up, the OS will move inactive pages in memory to the [swap space](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace), which is located on the **hard drive**. The idea is that, in times of large memory usage, the hard drive acts as a sort of "RAM overflow". Swapped memory is much, much slower than RAM, which is why inactive memory pages are the ones moved. This allows the Operating System to handle low memory gracefully and without crashing. Virtual addressing allows developers to not think about this happening, as the address translation done by the OS via the MMU will automatically map the corresponding virtual addresses to hard drive addresses.
