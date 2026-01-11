@@ -6,7 +6,7 @@ description: Apple's preferred approach to automatic memory management
 
 ## Overview
 
-If you have read the section on [C++ Smart Pointers](c++-smart-pointers.md), you actually pretty much understand ARC. In languages such as Swift, where ARC is used as the only memory management tool, effectively every class instance is used as a `shared_ptr`. The official documentation is [here](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting/).
+If you have read the section on [C++ Smart Pointers](../c++-smart-pointers.md), you actually pretty much understand ARC. In languages such as Swift, where ARC is used as the only memory management tool, effectively every class instance is used as a `shared_ptr`. The official documentation is [here](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting/).
 
 Officially, every time a class instance is assigned to a property, constant or variable it creates a **strong reference** to the instance. The reference is called "strong" because the instance cannot be deallocated as long as one such reference exists. Every time one of these properties, constants or variables have their references removed, through something like reaching the end of their lifetime or through reassignment, the reference counter of the class instance drops. Once it reaches zero, the instance is deallocated.
 
