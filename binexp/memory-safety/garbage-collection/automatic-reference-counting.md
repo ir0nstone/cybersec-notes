@@ -42,33 +42,3 @@ Reference counting can lead to memory-unsafe execution if a program is multi-thr
 Having a programming language that uses purely ARC is very rare - only Apple's languages, Objective-C and Swift, do this.
 
 Python [does count references](https://docs.python.org/3/glossary.html#term-reference-count), but it [also has a garbage collector](https://docs.python.org/3/glossary.html#term-garbage-collection) to detect and break reference cycles. Up until Python 3.13, the [Global Interpreter Lock](https://blog.jetbrains.com/pycharm/2025/07/faster-python-unlocking-the-python-global-interpreter-lock/) (GIL) meant that multi-threading in Python was actually all on one thread, which counteracted the multi-threading race condition. With the removal of the GIL, [some extra work](https://peps.python.org/pep-0703/) was needed to fix this problem.
-
-### Swift: Fixing Reference Cycles
-
-Swift has two keywords that help fix reference cycles when they are found. The first is `weak`, which does not increment the reference count and instead becomes `nil` whenever the instance being referred to is deallocated. `weak` references must therefore be nullable.
-
-The second keyword is `unowned`, which like `weak` creates no strong reference but also cannot be nullable. If the object being referred to is deallocated, the app will crash when the unowned reference is used.
-
-In summary, Swift leaves it up to the developer to identify and fix reference cycles.
-
-### Swift's Multi-threading Fix
-
-Swift requires synchronized access to any object that multiple threads can access concurrently. By this we mean that any **conflicting** operations are **ordered** and executed one after the other, rather than at once. It does this through the use of [Actors](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/#Actors), classes which serialize access to prevent data races, and [`Sendable`](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/#Sendable-Types), a type trait that lets Swift know that a type is safe to send between threads (more accurately, **concurrency domains**).
-
-Note that Swift does not **restrict** invalid access, but it classifies it as **undefined** if you do not follow its concurrency model. For example, the following compiles:
-
-```swift
-class Box {
-    var value = 0
-}
-
-let box = Box()
-
-DispatchQueue.global().async {
-    box.value += 1
-}
-
-DispatchQueue.global().async {
-    box.value += 1
-}
-```

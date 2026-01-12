@@ -121,6 +121,7 @@
     * [Automatic Reference Counting](binexp/memory-safety/garbage-collection/automatic-reference-counting.md)
   * [Rust](binexp/memory-safety/rust.md)
   * [Python (and C#, Java)](binexp/memory-safety/python-and-c-java.md)
+  * [Swift](binexp/memory-safety/swift.md)
   * [Sandboxing](binexp/memory-safety/sandboxing.md)
 * [Dynamic Binary Instrumentation](binexp/dynamic-binary-instrumentation.md)
 
