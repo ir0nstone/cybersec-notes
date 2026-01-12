@@ -116,6 +116,7 @@
     * [A Typer Bug](binexp/browser-exploitation/an-introduction-to-turbofan/a-typer-bug.md)
 * [Memory Safety](binexp/memory-safety/README.md)
   * [C++ Smart Pointers](binexp/memory-safety/c++-smart-pointers.md)
+  * [RAII (Resource Acquisition is Initialization)](binexp/memory-safety/raii-resource-acquisition-is-initialization.md)
   * [Garbage Collection](binexp/memory-safety/garbage-collection/README.md)
     * [Tracing Garbage Collection](binexp/memory-safety/garbage-collection/tracing-garbage-collection.md)
     * [Automatic Reference Counting](binexp/memory-safety/garbage-collection/automatic-reference-counting.md)
