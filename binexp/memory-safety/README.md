@@ -4,10 +4,9 @@ description: Languages like Rust and Swift claim to be "memory-safe". What does 
 
 # Memory Safety
 
+Memory Safety is the state of being protected from vulnerabilities that can arise from improper memory access control, such as buffer overflows.
 
+Virtually all high-level programming languages implement some kind of memory safety; for example, most of them will check that an array index is in bounds before attempting to access it.&#x20;
 
-Python
+In this section we will explore **garbage collection** and other techniques implemented by various languages to provide memory safety.
 
-Python has large overheads in their runtimes to provide their memory safety. Objects and allocated on a managed heap and never freed manually - instead, the **garbage collector** keeps track of references and frees objects once they become unreachable. Python also does not allow the use of pointers, and performs bounds checking on access for lists.
-
-C# and Java are similar in operation.
