@@ -143,7 +143,7 @@ So we can have either
 
 But it is not allowed for us to mix and match - **the compiler enforces this**.
 
-Notably, even if the borrow is **immutable** we are unable to mpodify a mutable variable. ake the following example:
+Notably, even if the borrow is **immutable** we are unable to modify the original mutable variable. Take the following example:
 
 ```rust
 fn main() {
