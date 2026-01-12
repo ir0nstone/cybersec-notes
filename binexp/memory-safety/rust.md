@@ -143,6 +143,36 @@ So we can have either
 
 But it is not allowed for us to mix and match - **the compiler enforces this**.
 
+Notably, even if the borrow is **immutable** we are unable to mpodify a mutable variable. ake the following example:
+
+```rust
+fn main() {
+    let mut original = "Hello, World!".to_string();
+    let a = &original;
+
+    println!("{}", a);
+    original = "wot".to_string();
+    println!("{}", a);
+}
+```
+
+We get the error
+
+```
+error[E0506]: cannot assign to `original` because it is borrowed
+ --> src/main.rs:6:5
+  |
+3 |     let a = &original;
+  |             --------- `original` is borrowed here
+...
+6 |     original = "wot".to_string();
+  |     ^^^^^^^^ `original` is assigned to here but it was already borrowed
+7 |     println!("{}", a);
+  |                    - borrow later used here
+```
+
+Coming from a language like C, we can be forgiven for thinking that we can get a pointer to a variable and, once the variable is modified, read the new value with this pointer. But Rust doesn't allow that!
+
 ### Lifetimes
 
 A **lifetime** is what the compiler's borrow checker uses to ensure borrows are valid. A lifetime begins when a variable is created, and ends when it is destroyed. [The Rust book](https://doc.rust-lang.org/rust-by-example/scope/lifetime.html) has a fantastic description of lifetimes, as well as how you can explicitly control them. The idea is that a variable is tied to the existence of other variables, and dies once they die.
