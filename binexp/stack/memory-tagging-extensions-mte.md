@@ -2,9 +2,7 @@
 description: Arm's MTE Hardware Protection
 ---
 
-# Memory Tagging Extensions
-
-##
+# Memory Tagging Extensions (MTE)
 
 ## Overview
 
