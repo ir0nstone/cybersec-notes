@@ -39,17 +39,13 @@ There are [three modes of MTE](https://source.android.com/docs/security/test/mem
 * Asynchronous is optimized for performance; on a tag mismatch, the process continues execution until the nearest kernel entry, and then terminates with SIGSEGV
 * Asymmetric is an improvement on Asynchronous in pretty much every way, doing synchronous checking on **reads** and asynchronous on **writes**
 
-Android suggests using SYNC mode for testing to catch bugs, and use ASYMM in production (or ASYNC if ASYMM does not exist in the processor) due to the lowr overhead.
+Android suggests using SYNC mode for testing to catch bugs, and use ASYMM in production (or ASYNC if ASYMM does not exist in the processor) due to the lower overhead.
 
 While MTE is incredibly powerful, it is sometimes **too** powerful, and as a result it is not always enabled by default. Many apps with buggy invalid accesses work perfectly fine silently, but will cause a full crash if MTE is enabled. As a result MTE is not forced upon user-installed apps on either Android or iOS. Due to performance concerns, MTE is not enabled by default for the Android kernel either.
 
-{% hint style="info" %}
-Apple now uses a new security mitigation called [Memory Integrity Enforcement](memory-integrity-enforcement.md) in their very latest iPhones, and we can expect to see this in the new Apple Silicon chips too.
-{% endhint %}
-
 ## Enhanced MTE
 
-This is a set of modifications made to MTE [thanks to Apple](https://security.apple.com/blog/memory-integrity-enforcement/), through collaboration with Arm. I can find little information about it except [here](https://developer.arm.com/documentation/109697/0100/Feature-descriptions/The-Armv8-9-architecture-extension?lang=en) under the heading **FEAT\_MTE4, Enhanced Memory Tagging Extension**. It is very much linked to Apple's new [Memory Integrity Enforcement](memory-integrity-enforcement.md).
+This is a set of modifications made to MTE [thanks to Apple](https://security.apple.com/blog/memory-integrity-enforcement/), through collaboration with Arm. I can find little information about it except [here](https://developer.arm.com/documentation/109697/0100/Feature-descriptions/The-Armv8-9-architecture-extension?lang=en) under the heading **FEAT\_MTE4, Enhanced Memory Tagging Extension**. It is very much linked to Apple's new [Memory Integrity Enforcement](memory-integrity-enforcement.md) security mitigation, which is found in their very latest iPhones. We can expect to see this in the new Apple Silicon chips.
 
 ## Resources
 
