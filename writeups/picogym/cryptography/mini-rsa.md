@@ -7,7 +7,7 @@ description: >-
 
 # Mini RSA
 
-Now we're getting onto proper cryptography. Here we are told that we are using RSA with a small exponent, but $$M^e$$ is just more than $$N$$. This means we can't **quite** do a [cube-root attack, but because it is **just** more than $$M$$ we can actually keep on adding multiples of $$N$$ onto $$c$$ ](https://ir0nstone.gitbook.io/crypto/rsa/public-exponent-attacks/small-e)and taking the cube root until we get the flag. As it is close, it's not infeasible to brute force. I use gmpy2's `iroot` function to take the cube root.
+Now we're getting onto proper cryptography. Here we are told that we are using RSA with a small exponent, but $$M^e$$ is just more than $$N$$. This means we can't **quite** do a [cube-root attack, but because it is **just** more than $$M$$ we can actually keep on adding multiples of $$N$$ onto $$c$$ ](../../../cryptography/overview/public-exponent-attacks/small-e.md)and taking the cube root until we get the flag. As it is close, it's not infeasible to brute force. I use gmpy2's `iroot` function to take the cube root.
 
 ```python
 from Crypto.Util.number import long_to_bytes
@@ -29,4 +29,3 @@ for i in range(10_000):
 
 # picoCTF{e_sh0u1d_b3_lArg3r_7adb35b1}
 ```
-

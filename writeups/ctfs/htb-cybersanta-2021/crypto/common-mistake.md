@@ -19,7 +19,7 @@ $$
 ae_1 + be_2 = 1
 $$
 
-To calculate this, we can use the [**Extended Euclidean Algorithm**](https://en.wikipedia.org/wiki/Extended\_Euclidean\_algorithm). But why is this helpful?
+To calculate this, we can use the [**Extended Euclidean Algorithm**](https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm). But why is this helpful?
 
 Well if we know that $$c_1 \equiv m^{e_1} \mod N$$ and $$c_2 \equiv m^{e_2} \mod N$$ and we know $$a,b$$ such that $$ae_1 + be_2 = 1$$, we can then use this to calculate $$m$$ like this:
 
@@ -27,7 +27,7 @@ $$
 c_1^a \cdot c_2^b = (m^{e_1})^a \cdot (m^{e_2})^b = m^{ae_1} \cdot m^{be_2} = m^{ae_1+be_2} = m^1 = m
 $$
 
-In practise $$b$$ is likely to be negative, and in modular arithmetic we use negative powers using the [Modular Multiplicative Inverse](https://ir0nstone.gitbook.io/crypto/fundamentals/modular-arithmetic#modular-multiplicative-inverses). Luckily, Sage can do this for us by default, so we can do even less steps:
+In practise $$b$$ is likely to be negative, and in modular arithmetic we use negative powers using the [Modular Multiplicative Inverse](../../../../cryptography/number-theory-fundamentals/modular-arithmetic.md#modular-multiplicative-inverses). Luckily, Sage can do this for us by default, so we can do even less steps:
 
 ```python
 from Crypto.Util.number import long_to_bytes

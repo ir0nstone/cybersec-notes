@@ -1,6 +1,6 @@
 # Basic-Mod2
 
-Again, simply do what it tells you. For information on the inverse modulo a prime, check out [my notes here](https://ir0nstone.gitbook.io/crypto/fundamentals/modular-arithmetic#modular-multiplicative-inverses)!
+Again, simply do what it tells you. For information on the inverse modulo a prime, check out [my notes here](../../../cryptography/number-theory-fundamentals/modular-arithmetic.md)!
 
 ```python
 from string import ascii_lowercase, digits

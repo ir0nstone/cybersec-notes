@@ -4,7 +4,7 @@ description: What if d is too small? Connect with nc mercury.picoctf.net 37455.
 
 # Dachshund Attacks
 
-We are told $$d$$ is too small, so this is a classic Wiener's Attack. I discuss the technique [here](https://ir0nstone.gitbook.io/crypto/rsa/public-exponent-attacks/wieners-attack), so I won't go over it again. Connecting to the server gives us $$e$$, $$N$$ and $$c$$. I will use SageMath for the continued fractions.
+We are told $$d$$ is too small, so this is a classic Wiener's Attack. I discuss the technique [here](../../../cryptography/overview/public-exponent-attacks/wieners-attack.md), so I won't go over it again. Connecting to the server gives us $$e$$, $$N$$ and $$c$$. I will use SageMath for the continued fractions.
 
 ```python
 from Crypto.Util.number import long_to_bytes

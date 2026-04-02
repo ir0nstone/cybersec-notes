@@ -50,7 +50,7 @@ print(key.n)
 print(key.e)
 ```
 
-We can throw $$N$$ into FactorDB to see if the factors are known, but they are not. The more notable observation is that $$e=3$$, which allows us to perform a [**cube root attack**](https://ir0nstone.gitbook.io/crypto/rsa/public-exponent-attacks/small-e) on the ciphertext.
+We can throw $$N$$ into FactorDB to see if the factors are known, but they are not. The more notable observation is that $$e=3$$, which allows us to perform a [**cube root attack**](../../../../cryptography/overview/public-exponent-attacks/small-e.md) on the ciphertext.
 
 The logic here is simple: because the message $$m$$ is quite short and the public modulus $$N$$ is quite large, a small value of $$e$$ such as $$3$$ may make it such that $$m^e < N$$. This makes the modulus ineffective as $$m^e = m^e \mod N$$ and we can simply take the $$e$$th root of the ciphertext to recover the plaintext.
 

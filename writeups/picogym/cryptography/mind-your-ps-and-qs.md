@@ -9,7 +9,7 @@ description: >-
 This is typical RSA decryption. We are given `n`, `e` and `c`.
 
 {% hint style="info" %}
-If you don't know much about RSA, check out [my overview](https://ir0nstone.gitbook.io/crypto/rsa/overview)!
+If you don't know much about RSA, check out [my overview](../../../cryptography/overview/)!
 {% endhint %}
 
 All we need are the factors of `N`. Because it's small, we can try and check if the factors are known using [FactorDB](http://factordb.com). And they are! So from here it's just standard RSA:
